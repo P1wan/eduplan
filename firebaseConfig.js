@@ -3,13 +3,7 @@ import 'firebase/firestore';
 import 'firebase/auth'; // 1. Importar o serviço de autenticação
 
 const firebaseConfig = {
-    apiKey: "AIzaSyBsreZBVB5ypBKo9dHSBUPUqb4iKQ8qEho",
-    authDomain: "eduplan-702e3.firebaseapp.com",
-    projectId: "eduplan-702e3",
-    storageBucket: "eduplan-702e3.firebasestorage.app",
-    messagingSenderId: "1082238804412",
-    appId: "1:1082238804412:web:92fed990c46227711d0bb9",
-    measurementId: "G-3XPH5YX054"
+//informações do firebase
   };
 
 if (!firebase.apps.length){
@@ -29,5 +23,6 @@ db.enablePersistence().catch((err) => {
         console.log("Persistência não é suportada neste dispositivo.");
     }
 });
+
 
 export { db, auth }; // 4. Exportar ambos, db e auth
