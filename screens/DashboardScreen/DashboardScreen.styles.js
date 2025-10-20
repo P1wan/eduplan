@@ -1,3 +1,5 @@
+// Local: Mobile/eduplan/screens/DashboardScreen/DashboardScreen.styles.js
+
 import { StyleSheet } from 'react-native';
 import { colors, spacing, typography } from '../../styles/theme';
 
@@ -6,86 +8,85 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
-
   header: {
+    paddingHorizontal: spacing.large,
+    paddingVertical: spacing.medium,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    padding: spacing.large,
-    backgroundColor: colors.primary,
   },
-
-  title: {
-    ...typography.h1,
-    color: colors.white,
-    fontSize: 28,
-  },
-
-  subtitle: {
-    ...typography.body,
-    color: colors.white,
-    opacity: 0.9,
-    marginTop: spacing.small,
-  },
-
-  content: {
-    flex: 1,
-    padding: spacing.large,
-  },
-
-  welcomeText: {
-    ...typography.h2,
-    textAlign: 'center',
-    marginBottom: spacing.xlarge,
-    color: colors.text,
-  },
-
-  menuContainer: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-
-  menuButton: {
-    backgroundColor: colors.white,
-    borderRadius: spacing.medium,
-    padding: spacing.large,
-    marginBottom: spacing.large,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.1,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-
-  menuButtonText: {
-    ...typography.h2,
-    color: colors.primary,
-    marginBottom: spacing.small,
-  },
-
-  menuButtonSubtext: {
+  greeting: {
     ...typography.body,
     color: colors.textSecondary,
-    lineHeight: 20,
   },
-
-  footer: {
-    padding: spacing.large,
-    borderTopWidth: 1,
-    borderTopColor: colors.border,
+  userName: {
+    ...typography.h1,
+    fontSize: 28,
   },
-
-  logoutButton: {
-    backgroundColor: colors.error || '#dc3545',
-    padding: spacing.medium,
+  logo: {
+    width: 50,
+    height: 50,
+    resizeMode: 'contain',
+  },
+  shortcutsContainer: {
+    flexDirection: 'row',
+    paddingHorizontal: spacing.large,
+    marginTop: spacing.small,
+    // --- INÍCIO DA CORREÇÃO DO ALINHAMENTO ---
+    gap: spacing.medium,
+    // --- FIM DA CORREÇÃO DO ALINHAMENTO ---
+  },
+  shortcutButton: {
+    flex: 1,
+    backgroundColor: colors.primary,
     borderRadius: spacing.small,
+    padding: spacing.medium,
+    // marginRight: spacing.medium, // Esta linha foi removida
     alignItems: 'center',
+    justifyContent: 'center',
   },
-
-  logoutButtonText: {
+  shortcutText: {
     ...typography.body,
     color: colors.white,
     fontWeight: 'bold',
+    marginTop: spacing.small,
+  },
+  sectionTitle: {
+    ...typography.h1,
+    fontSize: 20,
+    paddingHorizontal: spacing.large,
+    marginTop: spacing.large,
+    marginBottom: spacing.medium,
+  },
+  carouselCard: {
+    backgroundColor: colors.white,
+    borderRadius: spacing.small,
+    padding: spacing.medium,
+    width: 150,
+    height: 120,
+    marginRight: spacing.medium,
+    justifyContent: 'space-between',
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  carouselCardTitle: {
+    ...typography.body,
+    fontWeight: 'bold',
+  },
+  carouselCardSubtitle: {
+    ...typography.caption,
+  },
+  emptyCarouselText: {
+    ...typography.body,
+    color: colors.textSecondary,
+    paddingLeft: spacing.large,
+  },
+  calendarContainer: {
+    marginHorizontal: spacing.large,
+    marginBottom: spacing.large,
+    borderRadius: spacing.small,
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: colors.border,
   },
 });

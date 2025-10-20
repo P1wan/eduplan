@@ -1,5 +1,3 @@
-// Local: eduplan/screens/LoginScreen/LoginScreen.styles.js
-
 import { StyleSheet } from 'react-native';
 import { colors, spacing, typography } from '../../styles/theme';
 
@@ -13,18 +11,21 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: spacing.large,
   },
-  headerContainer: {
-    alignItems: 'center',
-    marginBottom: spacing.xlarge,
+  backButton: {
+    position: 'absolute',
+    top: spacing.large,
+    left: spacing.large,
   },
   title: {
     ...typography.h1,
-    fontSize: 32,
+    textAlign: 'center',
+    marginBottom: spacing.medium,
   },
-  slogan: {
+  instructions: {
     ...typography.body,
     color: colors.textSecondary,
-    marginTop: spacing.small,
+    textAlign: 'center',
+    marginBottom: spacing.xlarge,
   },
   input: {
     backgroundColor: colors.white,
@@ -33,45 +34,17 @@ export const styles = StyleSheet.create({
     borderRadius: spacing.small,
     padding: spacing.medium,
     fontSize: 16,
-    marginBottom: spacing.medium,
+    marginBottom: spacing.large,
   },
   buttonPrimary: {
     backgroundColor: colors.primary,
     padding: spacing.medium,
     borderRadius: spacing.small,
     alignItems: 'center',
-    marginBottom: spacing.medium,
   },
   buttonText: {
     ...typography.body,
     color: colors.white,
     fontWeight: 'bold',
   },
-  signupContainer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: spacing.large,
-  },
-  signupText: {
-    ...typography.body,
-    color: colors.textSecondary,
-  },
-  signupLink: {
-    ...typography.body,
-    color: colors.primary,
-    fontWeight: 'bold',
-    marginLeft: spacing.small,
-  },
-    logo: {
-    width: 100,
-    height: 100,
-    resizeMode: 'contain',
-    marginBottom: spacing.medium,
-  },
-    forgotPasswordText: {
-    ...typography.body,
-    color: colors.primary,
-    textAlign: 'center',
-    marginVertical: spacing.medium,
-  }
 });
