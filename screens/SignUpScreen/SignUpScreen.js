@@ -5,11 +5,13 @@ import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView } from 'reac
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './SignUpScreen.styles';
 import { auth, db } from '../../config/firebaseConfig';
+import { Ionicons } from '@expo/vector-icons';
 
 const SignUpScreen = ({ navigation }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleSignUp = () => {
     if (!name.trim() || !email.trim() || !password.trim()) {
@@ -64,13 +66,25 @@ const SignUpScreen = ({ navigation }) => {
           keyboardType="email-address"
           autoCapitalize="none"
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Senha (mín. 6 caracteres)"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry
-        />
+        <View style={styles.passwordContainer}>
+    <TextInput
+      style={styles.passwordInput}
+      placeholder="Senha (mín 6 caracteres)"
+      value={password}
+      onChangeText={setPassword}
+      secureTextEntry={!isPasswordVisible} // A visibilidade agora é dinâmica
+    />
+    <TouchableOpacity 
+      onPress={() => setIsPasswordVisible(!isPasswordVisible)} // Ao clicar, inverte o estado
+      style={styles.eyeIcon}
+    >
+      <Ionicons 
+        name={isPasswordVisible ? "eye-off" : "eye"} // O ícone muda de acordo com o estado
+        size={24} 
+        color="#888" 
+      />
+    </TouchableOpacity>
+  </View>
         <TouchableOpacity style={styles.buttonPrimary} onPress={handleSignUp}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>

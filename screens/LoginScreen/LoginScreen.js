@@ -3,10 +3,12 @@ import { View, Text, TextInput, TouchableOpacity, Alert, ScrollView, Image } fro
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { styles } from './LoginScreen.styles';
 import { auth } from '../../config/firebaseConfig';
+import { Ionicons } from '@expo/vector-icons';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   const handleLogin = () => {
     if (!email.trim() || !password.trim()) {
@@ -34,7 +36,25 @@ const LoginScreen = ({ navigation }) => {
           <Text style={styles.slogan}>Planejamento Pedagógico Inteligente</Text>
         </View>
         <TextInput style={styles.input} placeholder="E-mail" value={email} onChangeText={setEmail} keyboardType="email-address" autoCapitalize="none"/>
-        <TextInput style={styles.input} placeholder="Senha" value={password} onChangeText={setPassword} secureTextEntry/>
+        <View style={styles.passwordContainer}>
+    <TextInput
+      style={styles.passwordInput}
+      placeholder="Senha"
+      value={password}
+      onChangeText={setPassword}
+      secureTextEntry={!isPasswordVisible} // A visibilidade agora é dinâmica
+    />
+    <TouchableOpacity 
+      onPress={() => setIsPasswordVisible(!isPasswordVisible)} // Ao clicar, inverte o estado
+      style={styles.eyeIcon}
+    >
+      <Ionicons 
+        name={isPasswordVisible ? "eye-off" : "eye"} // O ícone muda de acordo com o estado
+        size={24} 
+        color="#888" 
+      />
+    </TouchableOpacity>
+  </View>
         <TouchableOpacity style={styles.buttonPrimary} onPress={handleLogin}><Text style={styles.buttonText}>Entrar</Text></TouchableOpacity>
         <View style={styles.signupContainer}>
           <Text style={styles.signupText}>Não tem conta?</Text>

@@ -1,3 +1,5 @@
+// Local: Mobile/eduplan/screens/QuestionDetailScreen/QuestionDetailScreen.styles.js
+
 import { StyleSheet } from 'react-native';
 import { colors, spacing, typography } from '../../styles/theme';
 
@@ -6,7 +8,6 @@ export const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.background,
   },
-  // --- ESTILOS PARA O NOVO CABEÇALHO ---
   header: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -55,6 +56,17 @@ export const styles = StyleSheet.create({
     padding: spacing.medium,
     borderRadius: spacing.small,
   },
+  // --- NOVO ESTILO ADICIONADO ---
+  metadataText: {
+    ...typography.body,
+    fontSize: 16,
+    backgroundColor: colors.white,
+    padding: spacing.medium,
+    borderRadius: spacing.small,
+    borderWidth: 1,
+    borderColor: colors.border,
+  },
+  // --- FIM DO NOVO ESTILO ---
   divider: {
     height: 1,
     backgroundColor: colors.border,
