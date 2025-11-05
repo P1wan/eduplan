@@ -3,7 +3,7 @@ import 'firebase/auth';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-
+//dados do firebase
 };
 
 // Inicializa o Firebase apenas se ainda não foi inicializado

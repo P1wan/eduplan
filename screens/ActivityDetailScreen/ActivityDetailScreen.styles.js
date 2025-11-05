@@ -1,3 +1,5 @@
+// Local: Mobile/eduplan/screens/ActivityDetailScreen/ActivityDetailScreen.styles.js
+
 import { StyleSheet } from 'react-native';
 import { colors, spacing, typography } from '../../styles/theme';
 
@@ -31,11 +33,18 @@ export const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.textSecondary,
     marginBottom: spacing.small,
+    marginTop: spacing.medium, // Adicionado espaço acima dos labels
   },
   instructions: {
     ...typography.body,
     fontSize: 16,
     lineHeight: 22,
+  },
+  dateText: { // Estilo para a data
+    ...typography.body,
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: colors.primary,
   },
   divider: {
     height: 1,

@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.background,
   },
   header: {
-    paddingHorizontal: spacing.large,
+    paddingHorizontal: spacing.large, // Voltamos ao espaçamento original
     paddingVertical: spacing.medium,
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -23,25 +23,28 @@ export const styles = StyleSheet.create({
     ...typography.h1,
     fontSize: 28,
   },
-  logo: {
-    width: 50,
-    height: 50,
-    resizeMode: 'contain',
+  // --- ESTILOS ATUALIZADOS/NOVOS ---
+  avatarButton: { // Estilo para o TouchableOpacity do avatar
+    padding: spacing.small, // Adiciona uma pequena área de toque extra
+    borderRadius: 50, // Faz a área de toque parecer circular
+    // Pode adicionar um fundo se quiser destacar mais
+    // backgroundColor: colors.border,
   },
+  avatarDisplay: {
+    fontSize: 40, // Tamanho do emoji/avatar
+  },
+  // --- FIM DOS ESTILOS ---
   shortcutsContainer: {
     flexDirection: 'row',
     paddingHorizontal: spacing.large,
     marginTop: spacing.small,
-    // --- INÍCIO DA CORREÇÃO DO ALINHAMENTO ---
     gap: spacing.medium,
-    // --- FIM DA CORREÇÃO DO ALINHAMENTO ---
   },
   shortcutButton: {
     flex: 1,
     backgroundColor: colors.primary,
     borderRadius: spacing.small,
     padding: spacing.medium,
-    // marginRight: spacing.medium, // Esta linha foi removida
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -79,7 +82,7 @@ export const styles = StyleSheet.create({
   emptyCarouselText: {
     ...typography.body,
     color: colors.textSecondary,
-    paddingLeft: spacing.large,
+    paddingLeft: spacing.large, // Mantido para alinhar com o início do carrossel
   },
   calendarContainer: {
     marginHorizontal: spacing.large,
@@ -88,5 +91,39 @@ export const styles = StyleSheet.create({
     overflow: 'hidden',
     borderWidth: 1,
     borderColor: colors.border,
+  },
+  upcomingCard: {
+    backgroundColor: colors.white,
+    borderRadius: spacing.small,
+    paddingVertical: spacing.small,
+    paddingHorizontal: spacing.medium,
+    marginBottom: spacing.small,
+    borderWidth: 1,
+    borderColor: colors.border,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  upcomingDate: {
+    ...typography.caption,
+    fontWeight: 'bold',
+    color: colors.primary,
+    marginRight: spacing.medium,
+  },
+  upcomingTitle: {
+    ...typography.body,
+    flex: 1,
+  },
+  emptyUpcomingText: {
+    ...typography.body,
+    color: colors.textSecondary,
+    paddingHorizontal: spacing.large,
+    paddingBottom: spacing.large,
+    textAlign: 'center',
+  },
+  loadingContainer: {
+    flex: 1,
+    minHeight: 300, // Dá uma altura mínima para o loading ser visível
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });

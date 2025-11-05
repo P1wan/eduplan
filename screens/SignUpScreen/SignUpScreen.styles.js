@@ -45,4 +45,21 @@ export const styles = StyleSheet.create({
     textAlign: 'center',
     marginTop: spacing.medium,
   },
+  passwordContainer: {
+  flexDirection: 'row', // Alinha o campo e o ícone na horizontal
+  alignItems: 'center', // Centraliza eles verticalmente
+  backgroundColor: colors.white,
+  borderWidth: 1,
+  borderColor: colors.border,
+  borderRadius: spacing.small,
+  marginBottom: spacing.medium,
+},
+passwordInput: {
+  flex: 1, // Faz o campo de texto ocupar todo o espaço disponível
+  padding: spacing.medium,
+  fontSize: 16,
+},
+eyeIcon: {
+  padding: spacing.medium, // Cria uma área de clique confortável para o ícone
+}
 });

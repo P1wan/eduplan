@@ -1,15 +1,30 @@
+// Local: Mobile/eduplan/screens/QuestionBankScreen/QuestionBankScreen.js
+
 import { StyleSheet } from 'react-native';
 import { colors, spacing, typography } from '../../styles/theme';
 
 export const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.background },
   header: {
-    padding: spacing.medium,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: spacing.medium,
+    paddingVertical: spacing.small,
     borderBottomWidth: 1,
     borderBottomColor: colors.border,
-    alignItems: 'center',
+    backgroundColor: colors.white,
   },
-  title: { ...typography.h1, fontSize: 24 },
+  backButton: {
+    paddingRight: spacing.small,
+  },
+  title: {
+    ...typography.h1,
+    fontSize: 20,
+    textAlign: 'center',
+    flex: 1,
+    marginHorizontal: spacing.small,
+  },
   searchContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -26,7 +41,6 @@ export const styles = StyleSheet.create({
   filterButton: {
     padding: spacing.small,
   },
-  // --- NOVOS ESTILOS PARA O PAINEL DE FILTROS ---
   filtersPanel: {
     paddingVertical: spacing.small,
     paddingHorizontal: 0,
@@ -60,7 +74,6 @@ export const styles = StyleSheet.create({
   },
   chipText: { color: colors.primary },
   chipTextActive: { color: colors.white },
-  // --- FIM DOS NOVOS ESTILOS ---
   emptyText: { ...typography.body, color: colors.textSecondary, textAlign: 'center', marginTop: spacing.xlarge },
   card: {
     backgroundColor: colors.white,
@@ -71,7 +84,19 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: colors.border,
   },
-  questionText: { ...typography.body, fontWeight: 'bold', marginBottom: spacing.small },
+  favoriteButton: { // Estilo para o botão de favorito
+    position: 'absolute',
+    top: spacing.small,
+    right: spacing.small,
+    padding: spacing.small / 2,
+    zIndex: 1,
+  },
+  questionText: {
+    ...typography.body,
+    fontWeight: 'bold',
+    marginBottom: spacing.small,
+    marginRight: 30, // Espaço para o botão de favorito não sobrepor
+  },
   footer: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   detailsText: { ...typography.caption },
   canonicalText: {

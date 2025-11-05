@@ -1,7 +1,9 @@
+// Local: Mobile/eduplan/screens/QuestionDetailScreen/QuestionDetailScreen.js
+
 import React from 'react';
 import { View, Text, ScrollView, Button, Alert, TouchableOpacity } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Ionicons } from '@expo/vector-icons'; // Importar ícones
+import { Ionicons } from '@expo/vector-icons';
 import { styles } from './QuestionDetailScreen.styles';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -33,13 +35,12 @@ const QuestionDetailScreen = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={styles.container}>
-      {/* --- CABEÇALHO COM A SETA DE VOLTAR --- */}
       <View style={styles.header}>
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Ionicons name="arrow-back" size={28} color="#4A90E2" />
         </TouchableOpacity>
         <Text style={styles.headerTitle}>Detalhes da Questão</Text>
-        <View style={{ width: 28 }} />{/* Espaço para centralizar o título */}
+        <View style={{ width: 28 }} />
       </View>
 
       <ScrollView>
@@ -56,6 +57,15 @@ const QuestionDetailScreen = ({ route, navigation }) => {
 
           <Text style={styles.label}>Resposta Correta:</Text>
           <Text style={styles.resposta}>{question.respostaCorreta}</Text>
+
+          {/* --- EXIBIR CÓDIGO SAEB SE EXISTIR --- */}
+          {question.codigoSaeb && (
+            <>
+              <Text style={styles.label}>Código Habilidade (SAEB):</Text>
+              <Text style={styles.metadataText}>{question.codigoSaeb}</Text>
+            </>
+          )}
+          {/* --- FIM DA EXIBIÇÃO --- */}
 
           <View style={styles.divider} />
           
